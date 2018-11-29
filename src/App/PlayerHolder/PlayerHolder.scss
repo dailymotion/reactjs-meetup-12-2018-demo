@@ -1,0 +1,21 @@
+.playerHolder {
+  width: 100%;
+}
+
+.sixteenByNiner {
+  position: relative;
+  padding-top: 56.25%;
+  background: #d9d9d9;
+}
+
+.playerDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: white;
+}

@@ -1,0 +1,30 @@
+.recommandation {
+  grid-column: span 6;
+  background: white;
+
+  @media (min-width: 480px) {
+    grid-column: span 4;
+  }
+
+  @media (min-width: 768px) {
+    grid-column: span 3;
+  }
+
+  @media (min-width: 1024px) {
+    grid-column: span 2;
+  }
+}
+
+.thumbnail {
+  width: 100%;
+  padding-top: 56.25%;
+  background: black;
+}
+
+.description {
+  h4 {
+    margin: 0;
+  }
+
+  padding: 8px;
+}

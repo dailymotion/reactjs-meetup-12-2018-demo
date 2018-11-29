@@ -1,0 +1,16 @@
+html, body {
+  font-family: system-ui;
+  margin: 0;
+  background: #efefef;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+:global(#root) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
