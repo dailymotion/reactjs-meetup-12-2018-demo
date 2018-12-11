@@ -5,9 +5,6 @@ import styles from './PlayerHolder.scss'
 
 export default
 class PlayerHolder extends Component {
-  componentDidMount() {
-    playerService.init(this.playerElt)
-  }
 
   shouldComponentUpdate() {
     return false
