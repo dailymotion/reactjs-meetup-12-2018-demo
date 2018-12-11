@@ -44,7 +44,7 @@ $ git checkout master # if you aren't on master already
 $ yarn build:static; yarn server:static
 ```
 
-This launches a server on [localhost:3000](http://localhost:3000). If you open the page on Chrome, to see what it feels
+This launches a server on [localhost:3000](http://localhost:3000/k5MHsQxn4vpUCmrwlou). If you open the page on Chrome, to see what it feels
 like on mobile you can open the Dev Tools (Cmd+Option+I on macOS or F12 on Windows), go to the Network panel, and
 throttle the page's bandwidth to Fast 3G.
 
@@ -57,6 +57,6 @@ $ git checkout optimized # if you aren't on optimized already
 $ yarn build:static; yarn server:static
 ```
 
-This launches a server on [localhost:3000](http://localhost:3000). If you open the page on Chrome, to see what it feels
+This launches a server on [localhost:3000](http://localhost:3000/k5MHsQxn4vpUCmrwlou). If you open the page on Chrome, to see what it feels
 like on mobile you can open the Dev Tools (Cmd+Option+I on macOS or F12 on Windows), go to the Network panel, and
 throttle the page's bandwidth to Fast 3G.
