@@ -5,7 +5,7 @@ Hello and welcome to the talk's demo code.
 
 ## Intro
 
-This repository is a proof of concept that shows you how to show prioritized content with a React.JS application.
+This repository is a proof of concept that shows you how to show prioritized content with a React application.
 
 This project is a mockup of what we did on Dailymotion's website to improve video load time and first visit user
 experience, especially for mobile devices.
@@ -31,6 +31,14 @@ all the changes that need to be applied to the unoptimized version of the code i
 
 Once you've clone the repository, go inside its folder. You can then install dependencies:
 
+**with npm**
+
+```
+$ npm install
+```
+
+**with yarn**
+
 ```
 $ yarn
 ```
@@ -41,6 +49,17 @@ Run the following commands:
 
 ```
 $ git checkout master # if you aren't on master already
+```
+
+**with npm**
+
+```
+$ npm run build:static; npm run server:static
+```
+
+**with yarn**
+
+```
 $ yarn build:static; yarn server:static
 ```
 
@@ -54,6 +73,17 @@ Run the following commands:
 
 ```
 $ git checkout optimized # if you aren't on optimized already
+```
+
+**with npm**
+
+```
+$ npm run build:static; npm run server:static
+```
+
+**with yarn**
+
+```
 $ yarn build:static; yarn server:static
 ```
 
