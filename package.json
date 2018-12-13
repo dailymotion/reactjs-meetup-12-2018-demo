@@ -5,9 +5,7 @@
     "build-app": "webpack",
     "build-html": "node ./scripts/prebuildHtml.js",
     "build:static": "rm -rf dist; npm run build-app && npm run build-html",
-    "server:static": "node server/index.js dist",
-    "server:ssr": "nodemon -w dist -w server -w scripts server/index.js --ssr",
-    "watch": "npm run build-app; npm run server:ssr & webpack -w"
+    "server:static": "node server/index.js dist"
   },
   "main": "index.js",
   "author": "Antoine JACKSON <a.j.william26@gmail.com>",
