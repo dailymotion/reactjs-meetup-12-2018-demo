@@ -8,11 +8,9 @@ export default class Recommandations extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        videos: [...new Array(100)],
-      })
-    }, 2000)
+    this.setState({
+      videos: [...new Array(100)],
+    })
   }
 
   renderRecommandation(index) {
