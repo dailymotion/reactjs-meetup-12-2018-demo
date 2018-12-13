@@ -29,48 +29,87 @@ const resolve = {
   },
 }
 
-module.exports = {
-  mode: process.env.NODE_ENV === 'development' ? 'development' : 'production',
-  entry: {
-    'client': './src/client.js',
-  },
-  target: 'web',
-  output: {
-    path: `${__dirname}/dist`,
-    filename: '[name].js',
-    publicPath: '/',
+module.exports = [
+  {
+    mode: process.env.NODE_ENV === 'development' ? 'development' : 'production',
+    entry: {
+      'critical': './src/critical.js',
+    },
+    target: 'web',
+    output: {
+      path: `${__dirname}/dist`,
+      filename: '[name].js',
+      publicPath: '/',
+    },
+    module: {
+      rules: [
+        {
+          test: /.*\.js$/,
+          use: 'babel-loader'
+        },
+        {
+          test: /.*\.scss/,
+          use: [
+            ExtractCssChunksPlugin.loader,
+            {
+              loader: 'css-loader',
+              query: { modules: true },
+            },
+            'sass-loader',
+          ]
+        }
+      ]
+    },
+
+    plugins: [
+      new ExtractCssChunksPlugin({
+        filename: 'styles.css',
+        chunkFilename: 'styles.css',
+      }),
+      new webpack.EnvironmentPlugin({
+        IS_BROWSER: true,
+      })
+    ],
+
+    optimization,
+    resolve,
   },
 
-  module: {
-    rules: [
-      {
-        test: /.*\.js$/,
-        use: 'babel-loader'
-      },
-      {
-        test: /.*\.scss/,
-        use: [
-          ExtractCssChunksPlugin.loader,
-          {
-            loader: 'css-loader',
-            query: { modules: true },
-          },
-          'sass-loader',
-        ]
-      }
-    ]
-  },
+  {
+    mode: process.env.NODE_ENV === 'development' ? 'development' : 'production',
+    entry: './src/server.js',
+    target: 'node',
+    output: {
+      path: `${__dirname}/dist`,
+      filename: 'bundle-server.js',
+      libraryTarget: 'commonjs2',
+    },
 
-  plugins: [
-    new ExtractCssChunksPlugin({
-      filename: 'styles.css',
-      chunkFilename: 'styles.css',
-    }),
-    new webpack.EnvironmentPlugin({
-      IS_BROWSER: true,
-    })
-  ],
+    module: {
+      rules: [
+        {
+          test: /.*\.js$/,
+          use: 'babel-loader'
+        },
+        {
+          test: /.*\.scss/,
+          use: [
+            {
+              loader: 'css-loader/locals',
+              query: { modules: true },
+            },
+            'sass-loader',
+          ]
+        }
+      ]
+    },
 
-  optimization,
-  resolve,
-}
+    plugins: [
+      new webpack.EnvironmentPlugin({
+        IS_BROWSER: false,
+      })
+    ],
+
+    resolve,
+  }
+]

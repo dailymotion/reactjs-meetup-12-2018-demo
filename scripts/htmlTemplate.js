@@ -1,4 +1,4 @@
-module.exports = () => `
+module.exports = (content = '', scripts = '') => `
   <!DOCTYPE html>
   <html>
   <head>
@@ -11,11 +11,10 @@ module.exports = () => `
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">${content}</div>
 
     <script src="https://api.dmcdn.net/all.js"></script>
-    <script src="/wpruntime.js"></script>
-    <script src="/client.js"></script>
+    ${scripts}
   </body>
   </html>
 `

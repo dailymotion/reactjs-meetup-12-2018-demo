@@ -17,8 +17,6 @@ export default
 class App extends Component {
   state = { mounted: false }
   componentDidMount() {
-    playerService.load(window.location.pathname.replace(/^\//, ''))
-
     this.setState({
       mounted: true,
     })
